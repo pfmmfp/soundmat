@@ -1,0 +1,33 @@
+{
+  "name": "soundmat",
+  "version": "0.1.0",
+  "description": "Multi track sound scheduler",
+  "main": "dist/soundmat.cjs.js",
+  "module": "dist/soundmat.esm.js",
+  "browser": "dist/soundmat.umd.js",
+  "author": "pfmmfp",
+  "repository": "pfmmfp/soundmat",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^21.1.1",
+    "jest": "^21.2.1",
+    "prettier": "1.7.4",
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "ts-jest": "^21.0.1",
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.5.0",
+    "tslint-config-standard": "^6.0.1",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "prebuild": "rm -rf build dist",
+    "build": "tsc && rollup -c",
+    "dev": "tsc -w & rollup -c -w",
+    "test": "jest",
+    "pretest": "npm run build",
+    "lint": "tslint -t codeFrame --type-check --project . src/*.ts"
+  },
+  "files": ["dist"]
+}
